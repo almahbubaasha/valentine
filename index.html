@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts Import -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&display=swap" rel="stylesheet">
     <title>Will You Be My Valentine? 💝</title>
     <style>
         * {
@@ -51,6 +55,35 @@
             animation: float 6s ease-in-out infinite;
             opacity: 0.6;
         }
+
+        /* Will You Be My Valentine এর জন্য special font */
+.valentine-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 4.5em;
+    background: linear-gradient(135deg, #ff1493, #ff69b4, #ff1493);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 30px;
+    font-weight: normal;
+    text-shadow: 3px 3px 6px rgba(255, 105, 180, 0.3);
+    line-height: 1.3;
+}
+
+/* I Love You SOYON এর জন্য special font */
+.love-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 4em;
+    background: linear-gradient(135deg, #ff0066, #ff69b4, #ff1493);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 30px;
+    font-weight: normal;
+    text-shadow: 3px 3px 8px rgba(255, 20, 147, 0.4);
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
 
         @keyframes float {
             0% {
@@ -121,7 +154,7 @@
 
         .button-container {
             position: relative;
-            height: 150px;
+            height: 180px;
             margin-top: 30px;
         }
 
@@ -144,6 +177,8 @@
             background: linear-gradient(135deg, #ff1493, #ff69b4);
             color: white;
             animation: heartbeat 1.5s ease-in-out infinite;
+            position: relative;
+            z-index: 10;
         }
 
         @keyframes heartbeat {
@@ -157,12 +192,12 @@
         }
 
         .no-btn {
-            background: #6c757d;
+            background: linear-gradient(135deg, #ffc0e0, #ffe0f0);
             color: white;
             position: absolute;
-            top: 50%;
+            top: 80px;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             transition: all 0.3s ease;
         }
 
@@ -268,8 +303,8 @@
 
             <!-- টেক্সট এবং বাটনের পার্ট -->
             <div class="text-section">
-                <h1>Will You Be<br>My Valentine? </h1>
-                <p class="subtitle">I promise to love you furr-ever! 🐱</p>
+                <h1 class="valentine-title">Will You Be<br>My Valentine?</h1>
+                <p class="subtitle">I promise to love you for-ever my love! 🐱</p>
 
                 <div class="button-container">
                     <button class="yes-btn" onclick="showPage2()"> Yes, Of Course! 💕</button>
@@ -291,8 +326,19 @@
 
             <!-- সাকসেস মেসেজ -->
             <div class="text-section">
-                <h1>I Love You SOYON!❤️</h1>
-                <p style="font-size: 1.5em; color: #ff1493;">You just made me the happiest! ❤️</p>
+                <h1 class="love-title">I Love You SOYON!❤️</h1>
+                <p style="font-size: 1.5em; color: #ff1493;">প্রিয় ভালোবাসা,
+                    তুমি আমার জীবনের সবচেয়ে সুন্দর একটা অধ্যায় যেখানে আমি প্রতিনিয়ত নতুন নতুন মুহূর্ত ক্যাপচার করে রাখি... কখনো রাগ, কখনো অভিমান, কখনো সুখ, আবার কখনো কষ্টের কিছু।
+তুমি জানো আমি তোমাকে কতটুকু ভালোবাসি? তুমি আমার চোখ পড়তে পারো? উম্ম মনে হয় পারো.... কি জানি!
+মনে আছে আমাদের প্রথম দেখা করার দিনটা?
+সেজেগুজে, মানুষের থেকে চুরি নিয়ে ম্যাচিং করে পরে অচেনা, অজানা, খুব অল্প সময়ের পরিচিত একটা মানুষের সাথে দেখা করতে চলে গেলাম.... ওইদিন আমার মনের বিন্দুমাত্রও কোনো সংকোচ, ভয় কিছুই কাজ করতেছিল না কারণ আমি তো জানি আমি কখনো প্রেম করবো না... আমি কি জানতাম যে এই মানুষটাকেই আল্লাহ আমার ৪ আঙুলের কপালে সুন্দর করে লিখে রেখেছে...
+হঠাৎ করে জীবনে আসা সেই মানুষটাই এখন আমার সবথেকে কাছের, সবথেকে প্রিয়।
+সয়ন, তুমি আমার খুব যত্নের, খুব আদরের, খুব ভালোবাসার প্রিয় একটা ফুল... যেই ফুলটা আমার জীবনের সব কালো অধ্যায় রঙিন করে তুলেছে।
+আমি যতই তোমার সাথে ঝগড়া বা রাগারাগি করি না কেন তোমার প্রতি আমার ভালোবাসা কখনোই কমবে না... তুমি সবসময়ই আমার জীবনে একটা সুন্দর ফুল হয়েই থাকবা।
+আজীবন আশার জীবনে ছায়ার মতো পাশে থেকো প্লিজ?!
+আশা তোমাকে এত্ত্ত্তোগুলা ভালোবাসে! 💌
+এটি তোমার
+মটু 😸</p>
                 <p style="font-size: 1.3em; color: #ff69b4;">You're purrfect! 🌹✨</p>
 
                 <div class="thank-you-box">
@@ -305,18 +351,50 @@
     <script>
         let moveCount = 0;
 
-        // No বাটন সরানোর ফাংশন
+        // No বাটন সরানোর ফাংশন (Yes থেকে দূরে রাখার logic সহ)
         function moveButton() {
             const noBtn = document.getElementById('noBtn');
             const container = document.querySelector('.button-container');
+            const yesBtn = document.querySelector('.yes-btn');
             
-            // Random position calculate করা
-            const maxX = container.offsetWidth - noBtn.offsetWidth;
-            const maxY = container.offsetHeight - noBtn.offsetHeight;
+            // Yes বাটনের position নেওয়া
+            const yesRect = yesBtn.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
             
-            const randomX = Math.random() * maxX;
-            const randomY = Math.random() * maxY;
+            let randomX, randomY;
+            let attempts = 0;
+            let validPosition = false;
             
+            // একটা ভালো position খুঁজে বের করা (Yes এর থেকে দূরে)
+            while (!validPosition && attempts < 50) {
+                // Random position তৈরি করা
+                const maxX = container.offsetWidth - noBtn.offsetWidth - 20;
+                const maxY = container.offsetHeight - noBtn.offsetHeight - 20;
+                
+                randomX = Math.random() * maxX;
+                randomY = Math.random() * maxY;
+                
+                // Yes বাটনের relative position calculate করা
+                const yesRelativeTop = yesRect.top - containerRect.top;
+                const yesRelativeLeft = yesRect.left - containerRect.left;
+                
+                // Check করা যে No বাটন Yes এর সাথে overlap করছে কিনা
+                const horizontalOverlap = randomX < (yesRelativeLeft + yesRect.width + 30) && 
+                                         (randomX + noBtn.offsetWidth + 30) > yesRelativeLeft;
+                
+                const verticalOverlap = randomY < (yesRelativeTop + yesRect.height + 30) && 
+                                       (randomY + noBtn.offsetHeight + 30) > yesRelativeTop;
+                
+                // যদি overlap না করে তাহলে valid position
+                if (!(horizontalOverlap && verticalOverlap)) {
+                    validPosition = true;
+                } else {
+                    // Overlap করলে আরেকবার try করা
+                    attempts++;
+                }
+            }
+            
+            // Position set করা
             noBtn.style.left = randomX + 'px';
             noBtn.style.top = randomY + 'px';
             noBtn.style.transform = 'none';
