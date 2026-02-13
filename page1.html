@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💝</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* পেজ ১ এর ব্যাকগ্রাউন্ড - Valentine থিম */
+        .page1-bg {
+            background: linear-gradient(135deg, #ffe6f0 0%, #ffd4e5 25%, #ffb3d9 50%, #ff99cc 75%, #ff80bf 100%);
+            animation: gradient 5s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* পেজ ২ এর ব্যাকগ্রাউন্ড */
+        .page2-bg {
+            background: linear-gradient(135deg, #fff7e6 0%, #ffe0f0 50%, #ffe6e6 100%);
+            animation: bgAnimate 3s ease infinite;
+        }
+
+        @keyframes bgAnimate {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Floating hearts animation */
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.4);
+            padding: 50px;
+            max-width: 1000px;
+            width: 100%;
+            border: 3px solid #ff69b4;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .image-section {
+            text-align: center;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.3);
+            border: 4px solid #ff69b4;
+        }
+
+        .text-section {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            background: linear-gradient(135deg, #ff1493, #ff69b4, #ff1493);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.2);
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            color: #ff1493;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .button-container {
+            position: relative;
+            height: 150px;
+            margin-top: 30px;
+        }
+
+        button {
+            font-size: 1.5em;
+            padding: 20px 60px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        .yes-btn {
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            color: white;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .yes-btn:hover {
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            animation: none;
+        }
+
+        .no-btn {
+            background: #6c757d;
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+        }
+
+        .message {
+            text-align: center;
+            color: #ff1493;
+            font-size: 1.2em;
+            margin-top: 20px;
+            font-weight: bold;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* পেজ ২ এর স্টাইল */
+        .thank-you-box {
+            background: linear-gradient(135deg, #ff69b4, #ff1493);
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.3);
+        }
+
+        .thank-you-box p {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #fff;
+            margin: 0;
+        }
+
+        .success-image {
+            animation: bounce 2s ease infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Show/Hide পেজ */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+            }
+            
+            button {
+                font-size: 1.2em;
+                padding: 16px 45px;
+            }
+
+            .image-section img {
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body class="page1-bg">
+
+    <!-- Floating Hearts Background -->
+    <div class="heart" style="left: 10%; animation-delay: 0s;">💕</div>
+    <div class="heart" style="left: 20%; animation-delay: 1s;">❤️</div>
+    <div class="heart" style="left: 30%; animation-delay: 2s;">💖</div>
+    <div class="heart" style="left: 40%; animation-delay: 3s;">💗</div>
+    <div class="heart" style="left: 50%; animation-delay: 4s;">💓</div>
+    <div class="heart" style="left: 60%; animation-delay: 2.5s;">💕</div>
+    <div class="heart" style="left: 70%; animation-delay: 1.5s;">❤️</div>
+    <div class="heart" style="left: 80%; animation-delay: 3.5s;">💖</div>
+    <div class="heart" style="left: 90%; animation-delay: 0.5s;">💗</div>
+
+    <!-- =============== পেজ ১ (প্রথম পেজ) =============== -->
+    <div class="container page active" id="page1">
+        <div class="content">
+            <!-- ছবির পার্ট -->
+            <div class="image-section">
+                <img src="cutu-cat.png" alt="Valentine Cat">
+            </div>
+
+            <!-- টেক্সট এবং বাটনের পার্ট -->
+            <div class="text-section">
+                <h1>Will You Be<br>My Valentine? </h1>
+                <p class="subtitle">I promise to love you furr-ever! 🐱</p>
+
+                <div class="button-container">
+                    <button class="yes-btn" onclick="showPage2()"> Yes, Of Course! 💕</button>
+                    <button class="no-btn" id="noBtn" onmouseover="moveButton()" onclick="moveButton()"> No 😔</button>
+                </div>
+
+                <div class="message" id="message"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =============== পেজ ২ (সাকসেস পেজ) =============== -->
+    <div class="container page" id="page2">
+        <div class="content">
+            <!-- ছবির পার্ট -->
+            <div class="image-section">
+                <img src="towsha.jpg" alt="Happy" class="success-image">
+            </div>
+
+            <!-- সাকসেস মেসেজ -->
+            <div class="text-section">
+                <h1>I Love You SOYON!❤️</h1>
+                <p style="font-size: 1.5em; color: #ff1493;">You just made me the happiest! ❤️</p>
+                <p style="font-size: 1.3em; color: #ff69b4;">You're purrfect! 🌹✨</p>
+
+                <div class="thank-you-box">
+                    <p>Happy Valentine's Day! 💕</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let moveCount = 0;
+
+        // No বাটন সরানোর ফাংশন
+        function moveButton() {
+            const noBtn = document.getElementById('noBtn');
+            const container = document.querySelector('.button-container');
+            
+            // Random position calculate করা
+            const maxX = container.offsetWidth - noBtn.offsetWidth;
+            const maxY = container.offsetHeight - noBtn.offsetHeight;
+            
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+            noBtn.style.transform = 'none';
+            
+            moveCount++;
+            
+            // মেসেজ দেখানো
+            const message = document.getElementById('message');
+            if (moveCount < 5) {
+                message.textContent = "Wait... where are you going? 😅";
+            } else if (moveCount < 10) {
+                message.textContent = "You can't escape my love! 💘";
+            } else {
+                message.textContent = "Just say YES already! 😻";
+            }
+        }
+
+        // পেজ ২ দেখানোর ফাংশন
+        function showPage2() {
+            // পেজ ১ hide করা
+            document.getElementById('page1').classList.remove('active');
+            
+            // পেজ ২ show করা
+            document.getElementById('page2').classList.add('active');
+            
+            // ব্যাকগ্রাউন্ড বদলানো
+            document.body.classList.remove('page1-bg');
+            document.body.classList.add('page2-bg');
+        }
+    </script>
+</body>
+</html>
